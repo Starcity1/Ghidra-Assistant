@@ -1,0 +1,60 @@
+Function Declaration:
+Name: foo
+Signature: undefined __stdcall foo(string param_1, int param_2, int param_3)
+Return Type: undefined
+Parameter Count: 3
+Param 0: /Demangler/std/string
+pack(disabled)
+Structure string {
+}
+Length: 0 Alignment: 1
+ - param_1	Param 1: int - param_2	Param 2: int - param_3	
+
+/* foo(std::string, int, int) */
+
+void foo(string *param_1,int param_2,int param_3)
+
+{
+  istream *piVar1;
+  uint uVar2;
+  long in_FS_OFFSET;
+  char local_461;
+  int local_460;
+  uint local_45c;
+  fpos<__mbstate_t> local_458 [16];
+  ifstream local_448 [528];
+  fpos<__mbstate_t> local_238 [16];
+  undefined auStack_228 [520];
+  long local_20;
+  
+  local_20 = *(long *)(in_FS_OFFSET + 0x28);
+  std::ifstream::ifstream(local_448,param_1,4);
+  std::fpos<__mbstate_t>::fpos(local_238,0x2500);
+                    /* try { // try from 00101488 to 001014a7 has its CatchHandler @ 00101602 */
+  std::istream::seekg((fpos)local_448);
+  system("cp example1 example1a && unlink example1");
+  std::fstream::fstream((fstream *)local_238);
+  std::operator|(8,0x10);
+                    /* try { // try from 001014ca to 001015b9 has its CatchHandler @ 001015ea */
+  std::fstream::open((char *)local_238,0x102039);
+  std::fpos<__mbstate_t>::fpos(local_458,(long)param_2);
+  std::ostream::seekp((fpos)auStack_228);
+  system("mv example1a example1");
+  for (local_460 = 0; local_460 < param_3; local_460 = local_460 + 1) {
+    piVar1 = (istream *)std::istream::operator>>((istream *)local_448,std::noskipws);
+    std::operator>>(piVar1,&local_461);
+    uVar2 = (uint)local_461;
+    local_45c = std::istream::peek();
+    local_45c = local_45c ^ uVar2;
+    std::ostream::put((char)auStack_228);
+  }
+  std::fstream::close();
+  std::fstream::~fstream((fstream *)local_238);
+  std::ifstream::~ifstream(local_448);
+  if (local_20 != *(long *)(in_FS_OFFSET + 0x28)) {
+                    /* WARNING: Subroutine does not return */
+    __stack_chk_fail();
+  }
+  return;
+}
+
